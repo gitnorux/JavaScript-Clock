@@ -1,2 +1,3 @@
 # JavaScript-Clock
 this is my fierst project on github
+devoloped with HTML CSS and Javascript ...
