@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{
+
+    margin: 0%;
+    padding: 0%;
+
+}
+
+    
+ #box{
+  height: 34.4rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+ /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right top, red, black,rgb(71, 9, 9),black,red);
+}
+
+.container{
+align-items: center;
+text-align: center;
+justify-content: center;
+right: 20%;
+text-shadow: 2px red;
+top: 130px;
+width: 600px;padding-top: 60px;
+padding-right: 100px;
+font-size: 80px;
+
+color: aliceblue;
+height: 200px;
+backdrop-filter:blur(20px);
+position: absolute;
+
+}
+.cal{
+align-items: center;
+text-align: center;
+justify-content: center;
+right: 20%;
+text-shadow: 2px red;
+top: 180px;
+padding-top: 170px;
+padding-right: 300px;
+font-size: 40px;
+
+color: aliceblue;
+
+
+position: absolute;
+
+}
+.circle{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(44, 24, 87);
+    
+    margin-left: 20%;
+    position: absolute;
+    left: -55px; top: -100px;
+    margin-top: 200px;
+
+
+}
+
+.square{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(109, 79, 22);
+    
+    margin-left: 70%;
+    position: absolute;
+    left: -55px; top: 70px;
+    margin-top: 200px;
+
+
+}
+.container span{
+display: inline-block;
+text-align: center;
+gap: 5rem;
+
+}
+.container span::after{
+content: '';
+font-size: 16px;
+display: flex;
+gap: 2rem;
+
+position: absolute;
+bottom: 70px;
+transform: translateX(20%);
+
+}
+#hr::after{
+
+    content: 'Hours';
+}
+#min::after{
+
+content: 'Minutes';
+}
+#sec::after{
+
+content: 'Sec';
+}
+
+
+
+
+</style>
+</head>
+<body>
+    <div id="box">
+<div class="circle">
+
+</div>
+<div class="square"></div>
+<div class="container">
+<span id="hr">00</span>
+<span>:</span>
+<span id="min">00</span>
+<span>:</span>
+<span id="sec">00</span>
+</div>
+<div class="cal">
+    
+    <span id="date">00</span>
+    <span>|</span>
+    <span id="month">00</span>
+    <span>|</span>
+    <span id="year">0000</span>
+
+</div>
+    </div>
+
+   <script>
+    //let hr=document.querySelector("hr");
+let hr=document.getElementById("hr");
+let min=document.getElementById("min");
+let sec=document.getElementById("sec");
+let date=document.getElementById("date");
+let month=document.getElementById("month");
+let year=document.getElementById("year");
+setInterval(()=>{
+ let currentTime= new Date();
+hr.innerHTML=currentTime.getHours();
+min.innerHTML=currentTime.getMinutes();
+sec.innerHTML=currentTime.getSeconds();   
+date.innerHTML=currentTime.getDate();
+month.innerHTML=currentTime.getMonth(7);
+year.innerHTML=currentTime.getFullYear();
+},1000)
+</script> 
+
+</body>
+</html>
